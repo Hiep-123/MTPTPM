@@ -1,0 +1,10 @@
+.wrapLayout {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 20px;
+    width: 1250px;
+    overflow: hidden; // ngăn scroll bên trong container
+}

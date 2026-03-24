@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.containerFilter {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .boxLeft {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        .boxIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+    }
+
+    .boxRight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+}
+
+.selectBox {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    color: #717171;
+}
+
+.container {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 200px;
+}
+
+.containerList {
+    flex-direction: column;
+}
+
+.active {
+    color: rgb(32, 69, 255);
+}
+
+
+.containerForm {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    margin: 40px 0;
+    height: 100%;
+
+    .box1 {
+        border-top: 1px solid #b3b3b3;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .box2 {
+        width: 45%;
+        height: 80%;
+        border: 1px solid #333;
+        border-width: 2px;
+        padding: 20px;
+
+        .containerBox2 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .boxInfo {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                span {
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                }
+
+                .boxInfo1 {
+                    padding: 10px;
+                    display: flex;
+                    gap: 10px;
+                    justify-content: center;
+                    align-content: center;
+                    border-top: 1px solid #b3b3b3;
+                    border-bottom: 1px solid #b3b3b3;
+                    border-width: 2.3px;
+
+                    img {
+                        width: 180px;
+                        height: 180px;
+                    }
+                }
+
+
+            }
+
+            .boxInfo2 {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                border-bottom: 1px solid #b3b3b3;
+                border-width: 2.3px;
+            }
+        }
+    }
+}
+
+span {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #797979;
+}
+
+.cashPayment {
+    display: flex;
+    gap: 1px;
+    flex-direction: column;
+}
+
+.contentMenu {
+    font-size: 21px;
+    line-height: 28px;
+    word-spacing: 2px;
+    color: #7a7a7a;
+    height: 0px;
+    padding: 0px 10px;
+    transition: all 0, 3s ease;
+    overflow: hidden;
+}
+
+.isVisibility {
+    overflow: visible;
+    height: auto;
+    padding-left: 25px;
+    padding-top: 5px;
+}
+
+.button {
+    flex-grow: 1;
+    margin: 20px 0;
+    width: 100%;
+    height: 60px;
+    font-size: 25px;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+fieldset {
+    border: 1px solid #e1e1e1;
+    border-radius: #e1e1e1;
+    margin: 0 0 2em;
+    padding: 1.5em 2.5em;
+    min-width: 0;
+    display: inline-block;
+    width: 100%;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+
+.saleBooster {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    width: 100%;
+    text-align: center;
+}
+
+legend {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #222;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
