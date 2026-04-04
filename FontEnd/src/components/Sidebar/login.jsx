@@ -47,7 +47,6 @@ function login() {
 
     const handleRegisterAndLogin = async () => {
         setIsLoading(true)
-
         try {
             if (isRegister === true) {
                 await registerAuth({
@@ -97,10 +96,9 @@ function login() {
     }, [userInfo]); // Chạy mỗi khi userInfo thay đổi
 
     useEffect(() => {
-        // Initialize Google Sign-In
         if (window.google && !isRegister) {
             window.google.accounts.id.initialize({
-                client_id: googleClientId, // Replace with your Google Client ID
+                client_id: googleClientId,
                 callback: handleGoogleCredentialResponse
             });
 
@@ -180,9 +178,6 @@ function login() {
                 </div>)}
             </div>
 
-
-            {/* <button content={!isRegister ? 'Log in' : 'Register'} isPrimary={true}
-                onClick={() => handleRegisterAndLogin()} /> */}
             <button className={button}
                 onClick={() => handleRegisterAndLogin()} >{!isRegister ? 'Log in' : 'Register'}</button>
 
