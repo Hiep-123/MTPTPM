@@ -26,7 +26,24 @@ function login() {
     const handleShowPassword = () => {
         setShowPassword(!showPassword)
     }
-
+    const handleGoogleCredentialResponse = async (response) => {
+        try {
+            setIsLoading(true);
+            const result = await googleOAuthLogin(response.credential);
+            setUserInfo(result.data);
+            const { token } = result.data;
+            const { _id } = result.data.user;
+            setUserId(_id);
+            Cookies.set('userId', _id, { expires: 1 });
+            Cookies.set('token', token, { expires: 1 });
+            toast.success('Đăng nhập với Google thành công!');
+            setIsOpen(false);
+        } catch (error) {
+            console.error('Google login error:', error);
+            toast.error('Đăng nhập với Google thất bại');
+            setIsLoading(false);
+        }
+    }
 
     const handleRegisterAndLogin = async () => {
         setIsLoading(true)
@@ -76,9 +93,21 @@ function login() {
         if (userInfo && userInfo.user.role) {
             navigate(userInfo.user.role === "admin" ? "/page/admin" : "/");
         }
-    }, [userInfo]);
+    }, [userInfo]); // Chạy mỗi khi userInfo thay đổi
 
+    useEffect(() => {
+        if (window.google && !isRegister) {
+            window.google.accounts.id.initialize({
+                client_id: googleClientId,
+                callback: handleGoogleCredentialResponse
+            });
 
+            window.google.accounts.id.renderButton(
+                document.getElementById('google-signin-button'),
+                { theme: 'outline', size: 'large' }
+            );
+        }
+    }, [isRegister]);
 
     return (
         <div className={containerLogin}>
@@ -155,6 +184,7 @@ function login() {
             {!isRegister && (
                 <div style={{ marginTop: '20px', textAlign: 'center' }}>
                     <p style={{ marginBottom: '10px' }}>Hoặc đăng nhập bằng:</p>
+                    <div id="google-signin-button"></div>
                 </div>
             )}
         </div>
